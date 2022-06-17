@@ -1,0 +1,33 @@
+<div class="bg-white p-3">
+  <div
+    *ngFor="let alert of alerts"
+    class="alert alert-dismissible fade show"
+    [class.alert-danger]="alert.error"
+    [class.alert-success]="!alert.error"
+    role="alert"
+  >
+    {{ alert.message }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <label>Hero image</label>
+  <img *ngIf="imageUrl" [src]="imageUrl" width="100%" height="auto" />
+  <app-image-input (onChange)="handleFileChange($event)"></app-image-input>
+  <div class="my-3">
+    <label for="introMessage" class="form-label">Introduction message</label>
+    <textarea
+      [(ngModel)]="content"
+      id="introMessage"
+      type="text"
+      class="form-control"
+      rows="7"
+    ></textarea>
+  </div>
+
+  <button class="btn btn-primary" (click)="handleSubmit()">Save changes</button>
+</div>

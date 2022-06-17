@@ -1,0 +1,8 @@
+<div class="listing-item d-flex justify-content-between p-4 border-bottom">
+  <span>{{ title }}</span>
+  <span class="text-muted">{{ date }}</span>
+  <div>
+    <button (click)="onEdit.emit()" class="btn text-primary">Edit</button>
+    <button (click)="onDelete.emit()" class="btn text-danger">Delete</button>
+  </div>
+</div>

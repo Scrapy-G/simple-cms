@@ -1,0 +1,22 @@
+<button class="btn btn-primary px-5" (click)="onNewListing()">
+  New listing
+</button>
+<div class="bg-white mt-4">
+  <app-listing-item
+    *ngFor="let listing of listings"
+    [title]="listing.title"
+    (onDelete)="deleteListing(listing.id)"
+    (onEdit)="onEditListing(listing)"
+  ></app-listing-item>
+</div>
+<app-create
+  *ngIf="showListingForm"
+  [listing]="listingForEdit"
+  [errors]="this.errors"
+  (onClose)="onFormClose()"
+  (onSubmit)="
+    listingForEdit
+      ? handleUpdateListing(listingForEdit.id, $event)
+      : handleAddListing($event)
+  "
+></app-create>

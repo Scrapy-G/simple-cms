@@ -1,0 +1,9 @@
+<div class="bg-white">
+  <app-nav-item
+    *ngFor="let navItem of navItems"
+    [title]="navItem.title"
+    [active]="selectedItem.path === navItem.path"
+    [path]="navItem.path"
+    (click)="handleClick(navItem)"
+  ></app-nav-item>
+</div>

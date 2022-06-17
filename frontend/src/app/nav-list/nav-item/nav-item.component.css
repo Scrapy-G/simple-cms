@@ -1,0 +1,10 @@
+.nav-item {
+  height: 60px;
+  color: black;
+}
+
+.active-link {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  color: #0d6efd;
+}
